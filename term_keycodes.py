@@ -120,8 +120,8 @@ def _remap_all(mapper):
     mappings.append((NONTEXT_KEYS, Modifier(super=True)))
 
     # Super+Shift
-    mappings.append((ANSI_UNSHIFTED, Modifier(ctrl=True, shift=True)))
-    mappings.append((NONTEXT_KEYS, Modifier(ctrl=True, shift=True)))
+    mappings.append((ANSI_UNSHIFTED, Modifier(super=True, shift=True)))
+    mappings.append((NONTEXT_KEYS, Modifier(super=True, shift=True)))
 
     unicode = UNICODE_CODEPOINT
     for keys, modifier in mappings:
