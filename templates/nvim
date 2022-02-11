@@ -28,6 +28,14 @@ local function get_codepoint(key, modifiers)
     return mod_map[key][mod_bits]
 end
 
+local function encode(key, modifiers)
+    local codepoint = get_codepoint(key, modifiers)
+    if codepoint then
+        return ("<Char-%u>"):format(codepoint)
+    end
+    return nil
+end
+
 ### REMAP TERMCODES ###
 
-return {get_codepoint=get_codepoint}
+return {get_codepoint=get_codepoint, encode=encode}
